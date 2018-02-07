@@ -1,3 +1,5 @@
+import { currentId } from "async_hooks";
+
 var Letters = require("./letter.js");
 
 var Word = function(word) {
@@ -16,13 +18,12 @@ var Word = function(word) {
     this.returnValue = function() {
         var returnString = "";
         for (var k=0; k < this.letterArray.length; k++) {
-            returnString+= this.letterArray[k].returnLetterValue();
+            returnString+= this.letterArray[k].displayLetter();
         }
     }
 }
 
-var current = new Word(currentWord);
-
-console.log("Current Word: " + currentWord);
-console.log("Word: " + current.word);
+var currentWord = new Word("Batman");
+var run = currentWord.getLetters() == currentWord.returnValue();
+console.log(run);
 
