@@ -1,16 +1,24 @@
-var Letters = function(letter) {
+var Letters = function(letter, correctGuess) {
     this.letter = letter, //value 
     //will show the letter if correctly guessed
-    this.show = false;
+    this.correctGuess = correctGuess;
+    this.displayLetter = "";
 
-    this.checkLetter = function() {
-        if(this.show === false) {
-            return " _ ";
-        } else if (this.letter == " ") {
-            this.show == true;
-            return " ";
+    this.checkGuess = function() {
+        var showLetter = "";
+        if (this.correctGuess == undefined) {
+            for (var i=0; i < this.letter.length; i++) {
+                showLetter = " _ ";
+            }
         } else {
-            return this.letter;
+            var correctLetterEntered = false;
+            for(var j = 0; j < this.gameWord.length; j++){ 
+                for (var k=0; k < this.correctGuess.length; k++) {
+                    if (this.letter[j] == this.correctGuess[k]) {
+                        showLetter += this.correctGuess[k];
+                        correctLetterEntered = true;
+                }
+            }
         }
     }
 };
