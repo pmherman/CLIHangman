@@ -1,5 +1,3 @@
-import { currentId } from "async_hooks";
-
 var Letters = require("./letter.js");
 
 var Word = function(word) {
@@ -23,7 +21,4 @@ var Word = function(word) {
     }
 }
 
-var currentWord = new Word("Batman");
-var run = currentWord.getLetters() == currentWord.returnValue();
-console.log(run);
-
+module.exports = Word;
