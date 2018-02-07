@@ -1,14 +1,10 @@
 var Letters = require("./letter.js");
 
-var wordBank = ["Flash", "Arrow", "Kid Flash", "The Atom", "Killer Frost"];
-
-var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-
 var Word = function(word) {
     this.letterArray = [];
     this.getLetters = function() {
-        for (var i=0; i < currentWord.length; i++) {
-            var currentLetter = new Letters(currentWord[i])
+        for (var i=0; i < word.length; i++) {
+            var currentLetter = new Letters(word[i])
             this.letterArray.push(currentLetter);
         }
     }
