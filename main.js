@@ -33,6 +33,7 @@ var userPrompt = function() {
             var userLetterInput = userGuess.userLetterInput;
             
             
+
             //function needed to pass the guess letter through the Word Constructor
             //will check to see if the letter guessed is correct
             //will output either the correct letter or the _
