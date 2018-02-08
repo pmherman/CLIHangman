@@ -31,8 +31,11 @@ var userPrompt = function() {
             }
         ]).then(function(userGuess) {
             var userLetterInput = userGuess.userLetterInput;
-            var validLetter = Word(userLetterInput);
-
+            var validLetter = userLetterInput.passGuessToLetters();
+            //function needed to pass the guess letter through the Word Constructor
+            //will check to see if the letter guessed is correct
+            //will output either the correct letter or the _
+            //will loop until all guesses have expired or the correct word is completed
         })
     }
 }
